@@ -6,6 +6,9 @@ export const clientsByIdRouter = publicProcedure
     .query(async ({ input, ctx }) => {
         const client = await ctx.db.client.findUnique({
             where: { id: input.clientId },
+            include: {
+                program: true,
+            }
         });
         return client;
     });
