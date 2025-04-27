@@ -85,6 +85,18 @@ CareSync allows doctors to **manage health programs** and **client enrollments**
 ---
 
 # Screenshots
+![image](https://github.com/user-attachments/assets/9cbff0af-3b1e-42aa-bd50-a8141919f9f4)
+![image](https://github.com/user-attachments/assets/f7e795ed-989f-4428-9568-d53af0000e7e)
+![image](https://github.com/user-attachments/assets/04824191-3746-4379-80ba-a600f5055f1f)
+
+![image](https://github.com/user-attachments/assets/bc7bea80-6f56-4464-9652-fdede6c40ae4)
+![image](https://github.com/user-attachments/assets/842a2775-b5f2-44c9-b43e-2b0bdf49ac1d)
+![image](https://github.com/user-attachments/assets/5f7f506c-4077-4a96-b2ef-bcbcaa4c7a04)
+
+![image](https://github.com/user-attachments/assets/03357758-3893-438d-a05b-15b58a37dd64)
+
+![image](https://github.com/user-attachments/assets/71cb28c0-4805-41d6-9160-57251cada9af)
+![image](https://github.com/user-attachments/assets/8d99f90c-0e4a-4f7e-a8b2-d047f712741f)
 
 
 ---
@@ -108,5 +120,6 @@ Yes, I exposed **client profile data** through a public API endpoint using tRPC.
 This means external systems can access specific client information safely.  
 I kept the structure flexible so that adding auth, permissions, or rate limits in the future will be straightforward.
 
+Also, the pictures in the programs were used for demo but were updated later.
 ---
 
