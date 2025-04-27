@@ -10,6 +10,9 @@ const config = {
         remotePatterns: [
             {
                 hostname: "kpngjc0hn0.ufs.sh"
+            },
+            {
+                hostname: "utfs.io"
             }
         ]
     }
