@@ -3,10 +3,10 @@ import { UploadThingError } from "uploadthing/server";
 
 const f = createUploadthing();
 
-const auth = (req: Request) => ({ id: "fakeId" }); 
- 
+const auth = (req: Request) => ({ id: "fakeId" });
+
 export const ourFileRouter = {
-   
+
     imageUploader: f({
         image: {
             maxFileSize: "4MB",
@@ -14,8 +14,9 @@ export const ourFileRouter = {
         },
     })
         .middleware(async ({ req }) => {
-            const user = await auth(req);
+            const user = auth(req);
 
+            // eslint-disable-next-line @typescript-eslint/only-throw-error
             if (!user) throw new UploadThingError("Unauthorized");
 
             // Whatever is returned here is accessible in onUploadComplete as `metadata`
@@ -24,9 +25,9 @@ export const ourFileRouter = {
         .onUploadComplete(async ({ metadata, file }) => {
             console.log("Upload complete for userId:", metadata.userId);
 
-            console.log("file url", file.ufsUrl); 
+            console.log("file url", file.ufsUrl);
             return { uploadedBy: metadata.userId };
         }),
-} satisfies FileRouter; 
+} satisfies FileRouter;
 
 export type OurFileRouter = typeof ourFileRouter;

@@ -1,6 +1,5 @@
-import { Bell, Search, Menu } from 'lucide-react'
+import { Bell, Menu } from 'lucide-react'
 import { Button } from '~/components/ui/button'
-import { Input } from '~/components/ui/input'
 
 interface HeaderProps {
     onMenuClick: () => void;
@@ -9,25 +8,16 @@ interface HeaderProps {
 export default function Header({ onMenuClick }: HeaderProps) {
     return (
         <header className="border-b bg-white">
-            <div className="flex h-16 items-center gap-4 px-4 sm:px-6">
-                <Button
-                    variant="ghost"
-                    size="icon"
-                    className="lg:hidden"
-                    onClick={onMenuClick}
-                >
-                    <Menu className="h-5 w-5" />
-                </Button>
-
-                <div className="flex flex-1 items-center">
-                    <div className="relative w-full max-w-md">
-                        <Search className="absolute left-2.5 top-2.5 h-4 w-4 text-gray-500" />
-                        <Input
-                            type="search"
-                            placeholder="Search anything..."
-                            className="pl-9 bg-gray-50 border-gray-200 focus:bg-white transition-colors"
-                        />
-                    </div>
+            <div className="flex h-16 items-center justify-between px-4 sm:px-6">
+                <div className="flex items-center gap-4">
+                    <Button
+                        variant="ghost"
+                        size="icon"
+                        className="lg:hidden"
+                        onClick={onMenuClick}
+                    >
+                        <Menu className="h-5 w-5" />
+                    </Button>
                 </div>
 
                 <div className="flex items-center gap-2">
