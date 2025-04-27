@@ -1,6 +1,6 @@
 # CareSync
 
-A basic health information system built with **Next.js**, **tRPC**, **Supabase**, and **shadcn/ui**.  
+A health information system built with **Next.js**, **tRPC**, **Supabase**, and **shadcn/ui**.  
 CareSync allows doctors to **manage health programs** and **client enrollments**, with **API-first** access to client profiles.
 
 ---
@@ -62,8 +62,7 @@ CareSync allows doctors to **manage health programs** and **client enrollments**
 
 - 🔗 **[GitHub repository](https://github.com/Lochipi/careSync)**  
 - 🔗 **[Project live link](https://caresync-omega.vercel.app/)**
-- 📊 **[Presentation link](https://docs.google.com/presentation/d/1P1vcImjO43LB9x8MVe_g2HnQG3Dm8qAbFvUnINYVXKM/edit?usp=sharing)** (Coming soon)
-
+- 📊 **[Presentation link](https://docs.google.com/presentation/d/1P1vcImjO43LB9x8MVe_g2HnQG3Dm8qAbFvUnINYVXKM/edit?usp=sharing)**
 ---
 
 ## Known issues
@@ -87,11 +86,14 @@ CareSync allows doctors to **manage health programs** and **client enrollments**
 # Screenshots
 ![image](https://github.com/user-attachments/assets/9cbff0af-3b1e-42aa-bd50-a8141919f9f4)
 ![image](https://github.com/user-attachments/assets/f7e795ed-989f-4428-9568-d53af0000e7e)
-![image](https://github.com/user-attachments/assets/04824191-3746-4379-80ba-a600f5055f1f)
+![image](https://github.com/user-attachments/assets/b8dff178-92d5-498e-a5c0-27edabdcffc7)
 
-![image](https://github.com/user-attachments/assets/bc7bea80-6f56-4464-9652-fdede6c40ae4)
-![image](https://github.com/user-attachments/assets/842a2775-b5f2-44c9-b43e-2b0bdf49ac1d)
-![image](https://github.com/user-attachments/assets/5f7f506c-4077-4a96-b2ef-bcbcaa4c7a04)
+![image](https://github.com/user-attachments/assets/9bb232c1-1ecf-44f7-9049-9af3c87a4f68)
+
+![image](https://github.com/user-attachments/assets/e39deb45-401f-42db-a3a5-445211629ca5)
+
+![image](https://github.com/user-attachments/assets/11bff451-cbe3-46bf-8467-b32ac405d555)
+
 
 ![image](https://github.com/user-attachments/assets/03357758-3893-438d-a05b-15b58a37dd64)
 
@@ -118,8 +120,7 @@ This keeps the system modular, clean, and scalable.
 
 Yes, I exposed **client profile data** through a public API endpoint using tRPC.  
 This means external systems can access specific client information safely.  
-I kept the structure flexible so that adding auth, permissions, or rate limits in the future will be straightforward.
+I kept the structure flexible so that adding auth, permissions, or rate limits in the future will be straightforward. 
 
-Also, the pictures in the programs were used for demo but were updated later.
 ---
 
