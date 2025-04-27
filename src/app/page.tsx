@@ -17,20 +17,19 @@ export default function Home() {
   const { data, isLoading, error } = api.programs.getDashboardMetrics.useQuery();
 
   return (
-    <div className="space-y-8 p-6">
+    <div className="space-y-8 p-2">
       <div className="flex items-center justify-between mb-6">
         <div>
           <h1 className="text-2xl font-bold mb-1">Dashboard Overview</h1>
           <p className="text-gray-500">Welcome to your program management dashboard</p>
         </div>
         {!isLoading && !error && (
-          <div className="bg-blue-50 text-blue-700 px-3 py-1 rounded-full text-sm font-medium flex items-center">
-            <div className="h-2 w-2 rounded-full bg-blue-500 mr-2"></div>
+          <div className="bg-blue-50 text-blue-700 px-1 py-1 rounded-full text-sm font-medium flex items-center">
+            <div className="h-2 w-2 rounded-full bg-blue-500 mr-1"></div>
             Last updated: {new Date().toLocaleDateString()}
           </div>
         )}
       </div>
-
       <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
         {isLoading ? (
           Array.from({ length: 3 }).map((_, index) => (
@@ -82,7 +81,9 @@ export default function Home() {
         )}
       </div>
 
+
       <div>
+
         <div className="flex items-center justify-between mb-4">
           <h2 className="text-xl font-bold flex items-center">
             <BarChart3 className="mr-2 h-5 w-5 text-blue-600" />
@@ -95,7 +96,7 @@ export default function Home() {
           )}
         </div>
 
-        <div className="bg-white rounded-xl border border-gray-100 shadow-sm overflow-hidden">
+        <div className="bg-white rounded-xl border border-gray-100 shadow-sm overflow-x-auto">
           {isLoading ? (
             <div className="p-6">
               <Skeleton className="h-6 w-full mb-4" />
@@ -153,7 +154,7 @@ export default function Home() {
       </div>
 
       {isLoading && (
-        <div className="flex justify-center items-center text-blue-600">
+        <div className="flex justify-center items-center text-blue-600 mt-6">
           <Loader2 className="h-4 w-4 animate-spin mr-2" />
           <span className="text-sm">Loading dashboard data...</span>
         </div>

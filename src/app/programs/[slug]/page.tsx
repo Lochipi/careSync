@@ -98,12 +98,11 @@ const ProgramPage = () => {
   const handleGoBack = () => {
     router.back();
   };
-
-  // Handle program error
+ 
   if (programError) {
     return (
-      <div className="flex h-screen items-center justify-center bg-gradient-to-br from-blue-50 via-slate-50 to-indigo-50 px-4">
-        <div className="w-full max-w-md rounded-xl bg-white p-8 shadow-xl">
+      <div className="flex h-screen items-center justify-center bg-gradient-to-br from-blue-50 via-slate-50 to-indigo-50 px-2">
+        <div className="w-full max-w-lg rounded-xl bg-white p-8 shadow-xl">
           <div className="mb-4 rounded-full bg-red-100 p-3 text-center">
             <Trash2 className="mx-auto h-8 w-8 text-red-600" />
           </div>
@@ -220,16 +219,16 @@ const ProgramPage = () => {
           </div>
 
           {showCreateForm && (
-            <div className="border-b border-gray-100 bg-blue-50/50 px-6 py-8">
-              <div className="mx-auto max-w-2xl rounded-xl bg-white p-6 shadow-lg">
+            <div className="border-b border-gray-100 bg-blue-50/50 px-6 sm:px-1 py-8">
+              <div className="mx-auto rounded-xl bg-white p-3 shadow-lg">
                 <h3 className="mb-4 text-xl font-semibold text-gray-800">Create New Client</h3>
                 <NewClientForm programId={id ?? ""} />
               </div>
             </div>
           )}
 
-          <div className="border-b border-gray-100 px-6 py-4">
-            <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
+          <div className="border-b border-gray-100 sm:px-1 px-6 py-4">
+            <div className="flex flex-col gap-2 sm:flex-row sm:items-center">
               <div className="relative flex-1">
                 <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-gray-400" />
                 <Input

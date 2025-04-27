@@ -1,8 +1,7 @@
 "use client";
-import { Home, ShoppingCartIcon, Package, LogOut, X } from 'lucide-react'
+import { Home, ShoppingCartIcon, Package, LogOut} from 'lucide-react'
 import Link from 'next/link'
-import { usePathname } from 'next/navigation'
-import { Button } from '~/components/ui/button'
+import { usePathname } from 'next/navigation' 
 
 interface SidebarProps {
     onClose?: () => void;
@@ -25,17 +24,7 @@ export default function Sidebar({ onClose, isCollapsed = false }: SidebarProps) 
                 <div className="h-7 w-7 rounded-md bg-indigo-600" />
                 {!isCollapsed && (
                     <span className="text-lg font-semibold">CareSync</span>
-                )}
-                {!isCollapsed && (
-                    <Button
-                        variant="ghost"
-                        size="icon"
-                        className="ml-auto lg:hidden"
-                        onClick={onClose}
-                    >
-                        <X className="h-5 w-5" />
-                    </Button>
-                )}
+                )} 
             </div>
 
             <nav className="flex-1 space-y-5 px-2 py-4 overflow-y-auto">

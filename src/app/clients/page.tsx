@@ -43,11 +43,11 @@ const ClientsPage = () => {
   if (error) {
     toast.error("Failed to fetch clients.");
     return (
-      <div className="mx-auto max-w-7xl p-8">
-        <div className="flex items-center justify-between mb-8">
-          <h1 className="text-3xl font-bold">Clients</h1>
+      <div className="mx-auto max-w-7xl p-4 sm:p-8">
+        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-6 gap-4">
+          <h1 className="text-2xl sm:text-3xl font-bold">Clients</h1>
           <Link href="/programs">
-            <Button>Add new client to the program</Button>
+            <Button className="w-full sm:w-auto">Add new client to the program</Button>
           </Link>
         </div>
         <Card className="border-red-200 bg-red-50 py-8">
@@ -74,13 +74,14 @@ const ClientsPage = () => {
   }
 
   return (
-    <div className="mx-auto max-w-7xl p-8">
-      <div className="flex items-center justify-between mb-8">
+    <div className="mx-auto max-w-7xl p-4 sm:p-8">
+      {/* Header */}
+      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-6">
         <div className="flex items-center gap-3">
           <div className="rounded-full bg-blue-100 p-2">
             <Users className="h-6 w-6 text-blue-600" />
           </div>
-          <h1 className="text-3xl font-bold">Clients</h1>
+          <h1 className="text-2xl sm:text-3xl font-bold">Clients</h1>
           {isLoading ? null : (
             <div className="ml-2 rounded-full bg-blue-100 px-3 py-1 text-sm font-medium text-blue-800">
               {filteredClients?.length ?? 0} total
@@ -88,15 +89,16 @@ const ClientsPage = () => {
           )}
         </div>
         <Link href="/programs">
-          <Button className="bg-blue-600 hover:bg-blue-700">
+          <Button className="w-full sm:w-auto bg-blue-600 hover:bg-blue-700">
             <Plus className="w-4 h-4 mr-2" />
             Add new client
           </Button>
         </Link>
       </div>
 
+      {/* Search + Reset */}
       <Card className="mb-6 p-4 border-blue-100">
-        <div className="flex gap-4">
+        <div className="flex flex-col sm:flex-row gap-4">
           <div className="relative flex-1">
             <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-gray-400" />
             <Input
@@ -109,7 +111,7 @@ const ClientsPage = () => {
           <Button
             variant="outline"
             onClick={() => reset()}
-            className="border-blue-200 text-blue-600 hover:bg-blue-50"
+            className="w-full sm:w-auto border-blue-200 text-blue-600 hover:bg-blue-50"
             disabled={isLoading}
           >
             <RotateCcw className="w-4 h-4 mr-2" />
@@ -118,8 +120,9 @@ const ClientsPage = () => {
         </div>
       </Card>
 
-      <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-        {isLoading ? ( 
+      {/* Clients list */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {isLoading ? (
           Array.from({ length: 6 }).map((_, idx) => (
             <Card key={idx} className="overflow-hidden border-gray-100">
               <CardHeader className="pb-2">
@@ -166,6 +169,7 @@ const ClientsPage = () => {
         )}
       </div>
 
+      {/* Pagination */}
       {!isLoading && totalPages > 1 && (
         <div className="mt-10 flex justify-center">
           <Pagination>
@@ -179,7 +183,7 @@ const ClientsPage = () => {
                       e.preventDefault();
                       setCurrentPage(idx + 1);
                     }}
-                    className={currentPage === idx + 1 ? "bg-blue-600" : ""}
+                    className={currentPage === idx + 1 ? "bg-blue-600 text-white" : ""}
                   >
                     {idx + 1}
                   </PaginationLink>
