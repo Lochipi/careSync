@@ -1,6 +1,7 @@
 import "~/styles/globals.css";
 import { NextSSRPlugin } from "@uploadthing/react/next-ssr-plugin";
 import { extractRouterConfig } from "uploadthing/server";
+import { Toaster } from "~/components/ui/sonner";
 
 import { ourFileRouter } from "~/app/api/uploadthing/core";
 
@@ -27,10 +28,11 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${geist.variable}`}>
       <body>
-        <NextSSRPlugin 
+        <NextSSRPlugin
           routerConfig={extractRouterConfig(ourFileRouter)}
         />
         <TRPCReactProvider>{children}</TRPCReactProvider>
+        <Toaster />
       </body>
     </html>
   );
