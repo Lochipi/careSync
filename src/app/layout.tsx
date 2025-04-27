@@ -9,6 +9,7 @@ import { type Metadata } from "next";
 import { Geist } from "next/font/google";
 
 import { TRPCReactProvider } from "~/trpc/react";
+import DashboardLayout from "./_components/layout/DashboardLayout";
 
 export const metadata: Metadata = {
   title: "CareSync",
@@ -28,11 +29,13 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${geist.variable}`}>
       <body>
-        <NextSSRPlugin
-          routerConfig={extractRouterConfig(ourFileRouter)}
-        />
-        <TRPCReactProvider>{children}</TRPCReactProvider>
-        <Toaster />
+        <DashboardLayout>
+          <NextSSRPlugin
+            routerConfig={extractRouterConfig(ourFileRouter)}
+          />
+          <TRPCReactProvider>{children}</TRPCReactProvider>
+          <Toaster />
+        </DashboardLayout>
       </body>
     </html>
   );
